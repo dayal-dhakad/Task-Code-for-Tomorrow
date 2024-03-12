@@ -20,8 +20,14 @@ export const ProductSlice = createSlice({
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
+    setPreviousPage:(state,action)=>{
+      state.currentPage=state.currentPage-1;
+    },
+    setNextPage:(state,action)=>{
+      state.currentPage=state.currentPage+1;
+    }
   },
 });
 
-export const { setItems, removeItems, setCurrentPage } = ProductSlice.actions;
+export const { setItems, removeItems, setCurrentPage,setNextPage, setPreviousPage } = ProductSlice.actions;
 export default ProductSlice.reducer;
